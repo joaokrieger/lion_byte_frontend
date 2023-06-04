@@ -9,6 +9,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import App from "./components/App";
 import Home from "./components/Home";
 import Login from './components/Login';
+import Produto from './components/Produto';
+import Pedido from './components/Pedido';
+import MinhaConta from './components/MinhaConta';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +25,18 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home/>
+      },
+      {
+        path: "/produtos",
+        element: <Produto/>
+      },
+      {
+        path: "/pedidos",
+        element: <Pedido/>
+      },
+      {
+        path: "/minha-conta",
+        element: <MinhaConta/>
       }
     ]
   }
