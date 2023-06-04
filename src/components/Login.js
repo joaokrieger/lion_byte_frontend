@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 export default function Login(){
     return(
           <div class="d-flex flex-column min-vh-100">
-            <div class="container mt-5 p-5">
+            <div class="container mt-5">
               <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6">
                   <div class="card bg-dark">
