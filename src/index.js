@@ -12,11 +12,16 @@ import Login from './components/Login';
 import Produto from './components/Produto';
 import Pedido from './components/Pedido';
 import MinhaConta from './components/MinhaConta';
+import Cadastro from './components/Cadastro';
 
 const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login/>
+  },
+  {
+    path: "/cadastro",
+    element: <Cadastro/>
   },
   {
     path: "/",

@@ -36,7 +36,9 @@ export default function Login(){
             </div>
             <footer class="footer mt-auto py-3 bg-dark">
               <div class="container text-center">
-                <button type="submit" class="btn btn-custom px-5">Cadastre-se</button>
+                <Link to='/cadastro'>
+                  <button type="submit" class="btn btn-custom px-5">Cadastre-se</button>
+                </Link>
               </div>
             </footer>
           </div>

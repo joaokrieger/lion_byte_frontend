@@ -1,5 +1,6 @@
 import React from "react";
 import imgLogo from '../img/logo.png';
+import icnMarket from '../img/icn_market.png';
 import './App.css'
 import {Outlet} from 'react-router-dom';
 import {Link} from 'react-router-dom';
@@ -9,9 +10,11 @@ export default function Home(){
         <div class="d-flex flex-column min-vh-100">
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-              <a class="navbar-brand" href="#">
-                <img draggable="false" src={imgLogo} alt="Logo" width="200"></img>
-              </a>
+              <Link to='/home'>
+                <a class="navbar-brand" href="#">
+                  <img draggable="false" src={imgLogo} alt="Logo" width="200"></img>
+                </a>
+              </Link>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
@@ -37,7 +40,10 @@ export default function Home(){
                 </ul>
               </div>
               <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-custom px-5">Carrinho de Compras</button>
+                <button type="submit" class="btn btn-custom px-5">
+                  <img draggable="false" src={icnMarket} alt="Carrinho" class="mx-2" width="25"></img>
+                  Carrinho de Compras
+                  </button>
               </div>
             </div>
           </nav>
