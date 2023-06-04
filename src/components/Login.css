@@ -1,13 +1,5 @@
 body{
     background-color: #343a40;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#root{
-    width: 2000px;
 }
 
 .btn-custom{
