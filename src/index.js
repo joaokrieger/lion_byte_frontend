@@ -13,6 +13,7 @@ import Produto from './components/Produto';
 import Pedido from './components/Pedido';
 import MinhaConta from './components/MinhaConta';
 import Cadastro from './components/Cadastro';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
+    errorElement: <ErrorPage/>,
     children:[
       {
         path: "/home",

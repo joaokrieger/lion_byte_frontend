@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 export default function MinhaConta(){
 
@@ -33,8 +34,12 @@ export default function MinhaConta(){
                         <label for="phone" class="form-label">Telefone</label>
                         <input type="tel" class="form-control" id="phone" placeholder="Digite seu telefone" required></input>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-custom px-5">Salvar Alterações</button>
+                    <hr class="my-5"/>
+                    <div class="d-flex justify-content-between">
+                        <button type="submit" class="btn btn-custom px-5 mx-2">Salvar Alterações</button>
+                        <Link to='/login'>
+                            <button class="btn btn-danger px-5 mx-2">Sair</button>
+                        </Link>
                     </div>
                 </form>
             </div>
