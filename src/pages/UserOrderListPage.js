@@ -1,13 +1,13 @@
 import React from "react";
-import UserEditForm from "../components/UserEditForm/UserEditForm";
 import UserNavbar from "../components/UserNavbar/UserNavbar";
 import Footer from "../components/Footer/Footer";
+import UserOrderCard from "../components/UserOrderCard/UserOrderCard";
 
-export default function UserEditPage(){
+export default function UserOrderListPage(){
     return(
         <div class="d-flex flex-column min-vh-100">
             <UserNavbar/>
-            <UserEditForm/>
+            <UserOrderCard/>
             <Footer/>
         </div>
     );
