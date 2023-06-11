@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
-export default function MinhaConta(){
+export default function UserEditForm(){
 
     return(
         <div class="d-flex justify-content-center">

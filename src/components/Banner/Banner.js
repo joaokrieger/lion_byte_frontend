@@ -1,8 +1,8 @@
 import React from "react";
-import './Home.css'
-import imgBanner from '../img/banner_ram.png';
+import './Banner.css'
+import imgBanner from '../../img/banner_ram.png';
 
-export default function Home(){
+export default function Banner(){
 
     return(
         <div id="banner_ram" class="d-flex justify-content-center">

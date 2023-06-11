@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Pedido(){
+export default function OrderCard(){
 
     return(
         <div class="container mt-3">

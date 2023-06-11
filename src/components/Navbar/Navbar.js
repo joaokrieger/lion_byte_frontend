@@ -1,13 +1,11 @@
 import React from "react";
-import imgLogo from '../img/logo.png';
-import icnMarket from '../img/icn_market.png';
-import './App.css'
-import {Outlet} from 'react-router-dom';
+import imgLogo from '../../img/logo.png';
+import icnMarket from '../../img/icn_market.png';
+import './Navbar.css'
 import {Link} from 'react-router-dom';
 
-export default function Home(){
+export default function Navbar(){
     return(
-        <div class="d-flex flex-column min-vh-100">
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
               <Link to='/home'>
@@ -47,12 +45,5 @@ export default function Home(){
               </div>
             </div>
           </nav>
-          <Outlet/>
-          <footer class="footer mt-auto py-3 bg-dark">
-            <div class="container text-center">
-                <img draggable="false" src={imgLogo} alt="Logo" width="100"></img>
-            </div>
-          </footer>
-        </div>
     );
 }
