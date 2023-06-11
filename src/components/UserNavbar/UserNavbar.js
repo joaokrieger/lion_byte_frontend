@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 export default function UserNavbar(){
     return(
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <nav id="user-navbar" className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
               <Link to='/home'>
                 <a className="navbar-brand" href="#">

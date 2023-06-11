@@ -5,7 +5,7 @@ import UserProductCard from "../components/UserProductCard/ProductCard";
 
 export default function UserProductListPage(){
     return(
-        <div class="d-flex flex-column min-vh-100">
+        <div className="d-flex flex-column min-vh-100">
             <UserNavbar/>
             <UserProductCard/>
             <Footer/>

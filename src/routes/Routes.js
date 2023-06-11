@@ -9,6 +9,7 @@ import UserOrderListPage from "../pages/UserOrderListPage";
 import RegisterPage from "../pages/RegisterPage";
 import UserEditPage from "../pages/UserEditPage";
 import AdminHomePage from "../pages/AdminHomePage";
+import AdminProductListPage from "../pages/AdminProductListPage";
 
 export default function App(){
 
@@ -24,7 +25,8 @@ export default function App(){
             <Route path="/pedidos" element={<UserOrderListPage/>} />
             <Route path="/minha-conta" element={<UserEditPage/>} />
 
-            <Route path="admin" element={<AdminHomePage/>} />
+            <Route path="/admin" element={<AdminHomePage/>} />
+            <Route path="/admin-produtos" element={<AdminProductListPage/>} />
           </Routes>
         </Router>
       );

@@ -5,7 +5,7 @@ import Banner from "../components/Banner/Banner";
 
 export default function UserHomePage(){
     return(
-        <div class="d-flex flex-column min-vh-100">
+        <div className="d-flex flex-column min-vh-100">
             <UserNavbar/>
             <Banner/>
             <Footer/>

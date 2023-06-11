@@ -1,19 +1,19 @@
-.navbarSupportedContent{
+#admin-navbar .navbarSupportedContent{
     flex-direction: row-reverse;
 }
 
-.nav-item{
+#admin-navbar .nav-item{
     border-radius: 10px;
     padding: 10px;
     margin: auto 10px;
 }
 
-.nav-item:hover{
+#admin-navbar .nav-item:hover{
     background-color: #FF5400;
     font-weight: bold;
     transition: 0.3s;
 }
 
-.nav-item a{
+#admin-navbar .nav-item a{
     text-decoration: none;
 }

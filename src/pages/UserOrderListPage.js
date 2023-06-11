@@ -5,7 +5,7 @@ import UserOrderCard from "../components/UserOrderCard/UserOrderCard";
 
 export default function UserOrderListPage(){
     return(
-        <div class="d-flex flex-column min-vh-100">
+        <div className="d-flex flex-column min-vh-100">
             <UserNavbar/>
             <UserOrderCard/>
             <Footer/>
