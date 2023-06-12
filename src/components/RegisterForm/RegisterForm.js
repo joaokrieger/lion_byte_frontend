@@ -23,13 +23,13 @@ export default function RegisterForm(){
         telefone: telefone
       }
       
-      try{
-        const response = await axios.post('http://localhost:8080/usuarios', newUser);
+      axios.post('http://localhost:8080/usuarios', newUser)
+      .then(response => {
         navigate("/home");
-      } 
-      catch (error) {
+      })
+      .catch(error => {
         alert('Erro');
-      }
+      });
     };
 
     return(

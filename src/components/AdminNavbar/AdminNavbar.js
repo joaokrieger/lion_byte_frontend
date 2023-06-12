@@ -20,27 +20,27 @@ export default function AdminNavbar(){
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to='/admin-produtos'>
+                    <Link to='/admin/produtos'>
                       <a className="nav-link" href="#">Produtos</a>
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to='/pedidos'>
-                      <a className="nav-link" href="#">Pedidos</a>
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to='/pedidos'>
+                    <Link to='/admin/categorias'>
                       <a className="nav-link" href="#">Categorias</a>
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to='/pedidos'>
+                    <Link to='/admin/fornecedores'>
                       <a className="nav-link" href="#">Fornecedores</a>
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to='/minha-conta'>
+                    <Link to='/admin/pedidos'>
+                      <a className="nav-link" href="#">Pedidos</a>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to='/admin/usuarios'>
                       <a className="nav-link" href="#">Usuários</a>
                     </Link>
                   </li>

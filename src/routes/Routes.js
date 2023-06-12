@@ -10,6 +10,11 @@ import RegisterPage from "../pages/RegisterPage";
 import UserEditPage from "../pages/UserEditPage";
 import AdminHomePage from "../pages/AdminHomePage";
 import AdminProductListPage from "../pages/AdminProductListPage";
+import AdminProductFormPage from "../pages/ProductFormPage";
+import AdminSupplierListPage from "../pages/AdminSupplierListPage";
+import AdminCategoryListPage from "../pages/AdminCategoryListPage";
+import AdminUserListPage from "../pages/AdminUserListPage";
+import AdminOrderListPage from "../pages/AdminOrderListPage";
 
 export default function App(){
 
@@ -26,7 +31,12 @@ export default function App(){
             <Route path="/minha-conta" element={<UserEditPage/>} />
 
             <Route path="/admin" element={<AdminHomePage/>} />
-            <Route path="/admin-produtos" element={<AdminProductListPage/>} />
+            <Route path="/admin/produtos" element={<AdminProductListPage/>} />
+            <Route path="/admin/fornecedores" element={<AdminSupplierListPage/>} />
+            <Route path="/admin/categorias" element={<AdminCategoryListPage/>} />
+            <Route path="/admin/usuarios" element={<AdminUserListPage/>} />
+            <Route path="/admin/pedidos" element={<AdminOrderListPage/>} />
+            <Route path="/admin/cadastro/produtos" element={<AdminProductFormPage/>} />
           </Routes>
         </Router>
       );
