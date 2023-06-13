@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom';
 
 export default function AdminCategoryTable (){
   const [registros, setRegistros] = useState([]);
+  
   useEffect(() => {
     axios.get('http://localhost:8080/categorias')
       .then(response => {
@@ -17,6 +18,17 @@ export default function AdminCategoryTable (){
         alert("Erro ao obter os registros:");
       });
   }, []);
+
+  const handleDelete = (id) => {
+    axios
+      .delete(`http://localhost:8080/categorias/${id}`)
+      .then((response) => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        alert("Erro ao excluir o registro");
+      });
+  };
 
   return (
     <div id="admin-category" >
@@ -40,8 +52,12 @@ export default function AdminCategoryTable (){
                     {registros.map(registro => (
                     <tr key={registro.id_categoria}>
                         <td>{registro.nome}</td>
-                        <td className="text-center"><button className="btn btn-warning px-4 text-white"><FontAwesomeIcon icon={faPenToSquare} style={{color: "#000000",}} /></button></td>
-                        <td className="text-center"><button className="btn btn-danger px-4 text-white"><FontAwesomeIcon icon={faTrash} style={{color: "#000000",}} /></button></td>
+                        <td className="text-center">
+                          <Link to={`/admin/cadastro/categorias/${registro.id_categoria}`}>
+                              <button className="btn btn-warning px-4 text-white"><FontAwesomeIcon icon={faPenToSquare} style={{color: "#000000",}} /></button>
+                          </Link>
+                        </td>
+                        <td className="text-center"><button className="btn btn-danger px-4 text-white" onClick={() => handleDelete(registro.id_categoria)}><FontAwesomeIcon icon={faTrash} style={{color: "#000000",}} /></button></td>
                     </tr>
                     ))}
                 </tbody>

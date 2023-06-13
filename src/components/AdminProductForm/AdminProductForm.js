@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
-export default function ProductForm(){
+export default function AdminProductForm(){
 
   const navigate = useNavigate();
     

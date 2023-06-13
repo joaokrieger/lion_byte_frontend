@@ -10,11 +10,13 @@ import RegisterPage from "../pages/RegisterPage";
 import UserEditPage from "../pages/UserEditPage";
 import AdminHomePage from "../pages/AdminHomePage";
 import AdminProductListPage from "../pages/AdminProductListPage";
-import AdminProductFormPage from "../pages/ProductFormPage";
 import AdminSupplierListPage from "../pages/AdminSupplierListPage";
 import AdminCategoryListPage from "../pages/AdminCategoryListPage";
 import AdminUserListPage from "../pages/AdminUserListPage";
 import AdminOrderListPage from "../pages/AdminOrderListPage";
+import AdminProductFormPage from "../pages/AdminProductFormPage";
+import AdminCategoryFormPage from "../pages/AdminCategoryFormPage";
+import AdminSupplierFormPage from "../pages/AdminSupplierFormPage";
 
 export default function App(){
 
@@ -36,7 +38,13 @@ export default function App(){
             <Route path="/admin/categorias" element={<AdminCategoryListPage/>} />
             <Route path="/admin/usuarios" element={<AdminUserListPage/>} />
             <Route path="/admin/pedidos" element={<AdminOrderListPage/>} />
+
             <Route path="/admin/cadastro/produtos" element={<AdminProductFormPage/>} />
+
+            <Route path="/admin/cadastro/categorias/" element={<AdminCategoryFormPage />}/>
+            <Route path="/admin/cadastro/categorias/:id_categoria" element={<AdminCategoryFormPage />}/>
+            <Route path="/admin/cadastro/fornecedores/" element={<AdminSupplierFormPage />}/>
+            <Route path="/admin/cadastro/fornecedores/:id_fornecedor" element={<AdminSupplierFormPage />}/>
           </Routes>
         </Router>
       );
