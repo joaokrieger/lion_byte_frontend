@@ -40,7 +40,7 @@ export default function App(){
             <Route path="/admin/pedidos" element={<AdminOrderListPage/>} />
 
             <Route path="/admin/cadastro/produtos" element={<AdminProductFormPage/>} />
-
+            <Route path="/admin/cadastro/produtos/:id_produto" element={<AdminProductFormPage/>} />
             <Route path="/admin/cadastro/categorias/" element={<AdminCategoryFormPage />}/>
             <Route path="/admin/cadastro/categorias/:id_categoria" element={<AdminCategoryFormPage />}/>
             <Route path="/admin/cadastro/fornecedores/" element={<AdminSupplierFormPage />}/>

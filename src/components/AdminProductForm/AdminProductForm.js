@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function AdminProductForm(){
 
   const navigate = useNavigate();
+  const { id_produto } = useParams();
     
   const [nome, setNome] = useState("");
   const [descricao, setDescricao] = useState("");
@@ -17,6 +18,22 @@ export default function AdminProductForm(){
   const [fornecedores, loadFornecedores] = useState([]);
 
   useEffect(() => {
+
+    if (id_produto != null) {
+      axios.get(`http://localhost:8080/produtos/${id_produto}`)
+        .then(response => {
+          setNome(response.data.nome);
+          setDescricao(response.data.descricao);
+          setPreco(response.data.preco);
+          setQuantidade(response.data.quantidade);
+          setCategoria(response.data.categoria.id_categoria);
+          setFornecedor(response.data.fornecedor.id_fornecedor);
+        })
+        .catch(error => {
+          alert("Erro ao tentar obter registro");
+        });
+    }
+
     // Carregar categorias
     axios
       .get("http://localhost:8080/categorias")
@@ -36,7 +53,7 @@ export default function AdminProductForm(){
       .catch((error) => {
         console.error("Erro ao obter os fornecedores:", error);
       });
-  }, []);
+  }, [id_produto]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,7 +66,13 @@ export default function AdminProductForm(){
       id_fornecedor: Number(fornecedor),
       id_categoria: Number(categoria)
     }
+
+    if (id_produto != null) {
+      newProduct.id_produto = Number(id_produto);
+    }
     
+    console.log(newProduct);
+
     axios.post('http://localhost:8080/produtos', newProduct)
     .then(response => {
       navigate("/admin/produtos");
@@ -100,7 +123,7 @@ export default function AdminProductForm(){
                     </div>
                     <hr className="my-5"/>
                     <div className="d-flex justify-content-center">
-                        <button type="submit" className="btn btn-custom px-5 mx-2">Cadastrar</button>
+                        <button type="submit" className="btn btn-custom px-5 mx-2">Salvar</button>
                     </div>
                 </form>
             </div>

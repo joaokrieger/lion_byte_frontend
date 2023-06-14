@@ -61,7 +61,11 @@ export default function AdminProductTable (){
                         <td>{registro.quantidade}</td>
                         <td>{registro.categoria.nome}</td>
                         <td>{registro.fornecedor.nome}</td>
-                        <td className="text-center"><button className="btn btn-warning px-4 text-white"><FontAwesomeIcon icon={faPenToSquare} style={{color: "#000000",}} /></button></td>
+                        <td className="text-center">
+                          <Link to={`/admin/cadastro/produtos/${registro.id_produto}`}>
+                            <button className="btn btn-warning px-4 text-white"><FontAwesomeIcon icon={faPenToSquare} style={{color: "#000000",}} /></button>
+                          </Link>
+                        </td>
                         <td className="text-center"><button className="btn btn-danger px-4 text-white" onClick={() => handleDelete(registro.id_produto)}><FontAwesomeIcon icon={faTrash} style={{color: "#000000",}} /></button></td>
                     </tr>
                     ))}

@@ -46,7 +46,7 @@ export default function AdminOrderTable (){
                     <tr key={registro.id_pedido}>
                         <td>{registro.usuario.nome}</td>
                         <td>{registro.data}</td>
-                        <td>{registro.total}</td>
+                        <td>R$ {registro.total}</td>
                         <td>{registro.status}</td>
                         <td className="text-center"><button className="btn btn-custom px-4 text-white"><FontAwesomeIcon icon={faPlay} style={{color: "#000000",}} /></button></td>
                         <td className="text-center"><button className="btn btn-danger px-4 text-white" onClick={() => handleDelete(registro.id_pedido)}><FontAwesomeIcon icon={faTrash} style={{color: "#000000",}} /></button></td>

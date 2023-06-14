@@ -60,7 +60,7 @@ export default function RegisterForm(){
                             <input type="tel" className="form-control" id="phone" placeholder="Digite seu telefone" value={telefone} onChange={(e) => setTelefone(e.target.value)}  required></input>
                         </div>
                         <div className="d-flex justify-content-center">
-                            <button type="submit" className="btn btn-custom px-5">Cadastrar-se</button>
+                            <button type="submit" className="btn btn-custom px-5">Salvar</button>
                         </div>
                     </form>
                 </div>

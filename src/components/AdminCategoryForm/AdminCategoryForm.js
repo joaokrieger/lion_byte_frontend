@@ -51,7 +51,7 @@ export default function AdminCategoryForm() {
             </div>
             <hr className="my-5"/>
             <div className="d-flex justify-content-center">
-              <button type="submit" className="btn btn-custom px-5 mx-2">Cadastrar</button>
+              <button type="submit" className="btn btn-custom px-5 mx-2">Salvar</button>
             </div>
           </form>
         </div>
