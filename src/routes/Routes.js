@@ -1,6 +1,6 @@
 import React from "react";
 import ErrorPage from '../components/ErrorPage/ErrorPage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import UserHomePage from "../pages/UserHomePage";
 import LoginPage from "../pages/LoginPage";
@@ -17,6 +17,7 @@ import AdminOrderListPage from "../pages/AdminOrderListPage";
 import AdminProductFormPage from "../pages/AdminProductFormPage";
 import AdminCategoryFormPage from "../pages/AdminCategoryFormPage";
 import AdminSupplierFormPage from "../pages/AdminSupplierFormPage";
+import UserProductDetailsPage from "../pages/UserProductDetailsPage";
 
 export default function App(){
 
@@ -29,6 +30,7 @@ export default function App(){
 
             <Route path="/home" element={<UserHomePage/>} />
             <Route path="/produtos" element={<UserProductListPage/>} />
+            <Route path="/produtos/:id_produto" element={<UserProductDetailsPage/>} />
             <Route path="/pedidos" element={<UserOrderListPage/>} />
             <Route path="/minha-conta" element={<UserEditPage/>} />
 

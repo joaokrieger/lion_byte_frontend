@@ -20,15 +20,16 @@ export default function RegisterForm(){
         email: email,
         senha: senha,
         endereco: endereco,
-        telefone: telefone
+        telefone: telefone,
+        is_admin: false
       }
       
       axios.post('http://localhost:8080/usuarios', newUser)
       .then(response => {
-        navigate("/home");
+        navigate("/");
       })
       .catch(error => {
-        alert('Erro');
+        alert('Erro: ',error);
       });
     };
 

@@ -1,6 +1,23 @@
 import React from "react";
 
 export default function UserOrderCard(){
+    
+    useEffect(() => {
+
+        axios.get(`http://localhost:8080/pedidos/`)
+        .then(response => {
+            setNome(response.data.nome);
+            setDescricao(response.data.descricao);
+            setPreco(response.data.preco);
+            setQuantidadeEstoque(response.data.quantidade);
+            setCategoria(response.data.categoria.nome);
+            setFornecedor(response.data.fornecedor.nome);
+        })
+        .catch(error => {
+            alert("Erro ao tentar obter registro");
+        });
+    
+    }, []);
 
     return(
         <div className="container mt-3">
