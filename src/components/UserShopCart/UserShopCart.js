@@ -8,16 +8,20 @@ export default function UserShopCart(){
     const [registros, setRegistros] = useState([]);
     const [total_carrinho, setTotalCarrinho] = useState(0);
 
+    const id_usuario = localStorage.getItem('id_usuario');
+
     useEffect(() => {
-        axios.get('http://localhost:8080/carrinho')
-        .then(response => {
+        axios.get('http://localhost:8080/carrinho', {
+          params: { id_usuario: id_usuario }
+        })
+          .then(response => {
             setRegistros(response.data);
             calculateTotalCarrinho(response.data);
-        })
-        .catch(error => {
-            alert("Erro ao obter os registros:",error);
-        });
-    }, []);
+          })
+          .catch(error => {
+            alert("Erro ao obter os registros: " + error);
+          });
+      }, []);
 
     const handleDelete = (id_carrinho) => {
         axios
