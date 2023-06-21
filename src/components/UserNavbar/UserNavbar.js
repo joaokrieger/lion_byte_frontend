@@ -9,7 +9,7 @@ export default function UserNavbar(){
           <nav id="user-navbar" className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
               <Link to='/home'>
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand">
                   <img draggable="false" src={imgLogo} alt="Logo" width="200"></img>
                 </a>
               </Link>
@@ -17,17 +17,17 @@ export default function UserNavbar(){
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
                     <Link to='/home'>
-                      <a className="nav-link" href="#">Home</a>
+                      <a className="nav-link">Home</a>
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link to='/produtos'>
-                      <a className="nav-link" href="#">Produtos</a>
+                      <a className="nav-link">Produtos</a>
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link to='/pedidos'>
-                      <a className="nav-link" href="#">Pedidos</a>
+                      <a className="nav-link">Pedidos</a>
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -38,11 +38,13 @@ export default function UserNavbar(){
                 </ul>
               </div>
               <div className="d-flex justify-content-end">
-                <button type="submit" className="btn btn-custom px-5">
-                  <img draggable="false" src={icnMarket} alt="Carrinho" className="mx-2" width="25"></img>
-                  Carrinho de Compras
+                <Link to='/carrinho-compras'>
+                  <button type="submit" className="btn btn-custom px-5">
+                    <img draggable="false" src={icnMarket} alt="Carrinho" className="mx-2" width="25"></img>
+                    Carrinho de Compras
                   </button>
-              </div>
+                </Link>
+              </div> 
             </div>
           </nav>
     );

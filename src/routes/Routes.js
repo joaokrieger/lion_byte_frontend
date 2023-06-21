@@ -18,6 +18,7 @@ import AdminProductFormPage from "../pages/AdminProductFormPage";
 import AdminCategoryFormPage from "../pages/AdminCategoryFormPage";
 import AdminSupplierFormPage from "../pages/AdminSupplierFormPage";
 import UserProductDetailsPage from "../pages/UserProductDetailsPage";
+import UserShopCartPage from "../pages/UserShopCartPage";
 
 export default function App(){
 
@@ -33,6 +34,7 @@ export default function App(){
             <Route path="/produtos/:id_produto" element={<UserProductDetailsPage/>} />
             <Route path="/pedidos" element={<UserOrderListPage/>} />
             <Route path="/minha-conta" element={<UserEditPage/>} />
+            <Route path="/carrinho-compras" element={<UserShopCartPage/>} />
 
             <Route path="/admin" element={<AdminHomePage/>} />
             <Route path="/admin/produtos" element={<AdminProductListPage/>} />

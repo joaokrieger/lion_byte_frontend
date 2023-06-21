@@ -22,13 +22,17 @@ export default function LoginForm(){
     axios.post('http://localhost:8080/usuarios/login', loginUser)
     .then(response => {
 
-      if(response.data.is_admin){
-        navigate("/admin");
-        localStorage.setItem('id_usuario', response.data.id_usuario);
-      }
-      else{
-        navigate("/home");
-        localStorage.setItem('id_usuario', response.data.id_usuario);
+      console.log(response.data.id_usuario);
+      if(response.data.id_usuario > 0){
+
+        if(response.data.is_admin){
+          navigate("/admin");
+          localStorage.setItem('id_usuario', response.data.id_usuario);
+        }
+        else{
+          navigate("/home");
+          localStorage.setItem('id_usuario', response.data.id_usuario);
+        }
       }
       alert(response.data.msg);
     })
