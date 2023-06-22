@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareXmark } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 export default function UserShopCart(){
-
+    
+    const navigate = useNavigate();
     const [registros, setRegistros] = useState([]);
     const [total_carrinho, setTotalCarrinho] = useState(0);
 
@@ -42,6 +44,21 @@ export default function UserShopCart(){
         setTotalCarrinho(total);
     };
 
+    const handleSubmit = async (event) => {
+        const newOrder = {
+            id_usuario: id_usuario,
+            total: total_carrinho
+        }
+    
+        axios.post('http://localhost:8080/pedidos', newOrder)
+        .then(response => {
+          navigate("/pedidos");
+        })
+        .catch(error => {
+          alert('Erro');
+        });
+      };
+
     return(
         <div className="container my-4">
             <table className="table">
@@ -71,7 +88,7 @@ export default function UserShopCart(){
                     </tr>
                 </tfoot>
             </table>
-            <button className="btn btn-custom">Finalizar Compra</button>
+            <button onClick={handleSubmit} className="btn btn-custom">Finalizar Compra</button>
         </div>
     );
 }

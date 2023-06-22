@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {Link} from 'react-router-dom';
+import moment from 'moment';
 
 export default function UserOrderCard(){
     
@@ -20,12 +22,17 @@ export default function UserOrderCard(){
             <div className="row">
                 {registros.map(registro => (
                     <div className="col-md-4 my-2">
-                        <div className="card">
+                        <div className="card" key={registro.id_pedido}>
                             <div className="card-body">
-                                <h5 className="card-title text-center">{registro.data}</h5>
+                                <h5 className="card-title text-center">{moment(registro.data).format("DD/MM/YYYY")}</h5>
                                 <hr/>
-                                <p className="card-text">R${registro.total}</p>
-                                <p className="card-text">{registro.status}</p>
+                                <p className="card-text">{registro.total}</p>
+                                <p className="card-text">R$ {registro.status}</p>
+                                <div className="d-flex justify-content-center">
+                                    <Link to={`/produtos/${registro.id_pedido}`}>
+                                        <button className="btn btn-custom mx-2">Ver mais</button>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
