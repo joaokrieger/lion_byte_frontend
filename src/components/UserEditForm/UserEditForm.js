@@ -73,7 +73,7 @@ export default function UserEditForm(){
                     </div>
                     <div className="mb-3">
                         <label for="password" className="form-label">Senha</label>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input type={mostrarSenha ? 'text' : 'password'} className="form-control" id="password" placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} required/>
                             <button className="btn btn-outline-secondary" type="button" onClick={handleToggleSenha}> {mostrarSenha ? 'Ocultar' : 'Mostrar'}</button>
                         </div>

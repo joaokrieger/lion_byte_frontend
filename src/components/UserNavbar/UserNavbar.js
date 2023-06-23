@@ -1,6 +1,6 @@
 import React from "react";
-import imgLogo from '../../img/logo.png';
-import icnMarket from '../../img/icn_market.png';
+import imgLogo from '../../assets/img/logo.png';
+import icnMarket from '../../assets/img/icn_market.png';
 import './UserNavbar.css'
 import {Link} from 'react-router-dom';
 

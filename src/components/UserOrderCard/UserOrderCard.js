@@ -26,10 +26,10 @@ export default function UserOrderCard(){
                             <div className="card-body">
                                 <h5 className="card-title text-center">{moment(registro.data).format("DD/MM/YYYY")}</h5>
                                 <hr/>
-                                <p className="card-text">{registro.total}</p>
-                                <p className="card-text">R$ {registro.status}</p>
+                                <p className="card-text">{registro.status}</p>
+                                <p className="card-text">R$ {registro.total}</p>
                                 <div className="d-flex justify-content-center">
-                                    <Link to={`/produtos/${registro.id_pedido}`}>
+                                    <Link to={`/pedidos/${registro.id_pedido}`}>
                                         <button className="btn btn-custom mx-2">Ver mais</button>
                                     </Link>
                                 </div>
