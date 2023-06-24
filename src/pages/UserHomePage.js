@@ -1,13 +1,13 @@
 import React from "react";
 import UserNavbar from "../components/UserNavbar/UserNavbar";
 import Footer from "../components/Footer/Footer";
-import Banner from "../components/Banner/Banner";
+import HomeBanner from "../components/HomeBanner/HomeBanner";
 
 export default function UserHomePage(){
     return(
         <div className="d-flex flex-column min-vh-100">
             <UserNavbar/>
-            <Banner/>
+            <HomeBanner/>
             <Footer/>
         </div>
     );

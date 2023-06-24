@@ -24,10 +24,11 @@ export default function UserOrderCard(){
                     <div className="col-md-4 my-2">
                         <div className="card" key={registro.id_pedido}>
                             <div className="card-body">
-                                <h5 className="card-title text-center">{moment(registro.data).format("DD/MM/YYYY")}</h5>
+                                <h5 className="card-title text-center">Pedido #{registro.id_pedido}</h5>
+                                <h6 className="card-subtitle text-muted text-center">{moment(registro.data).format("DD/MM/YYYY")}</h6>
                                 <hr/>
-                                <p className="card-text">{registro.status}</p>
-                                <p className="card-text">R$ {registro.total}</p>
+                                <h6 className="card-subtitle text-muted text-center">{registro.status}</h6>
+                                <p className="card-text text-center">R$ {registro.total}</p>
                                 <div className="d-flex justify-content-center">
                                     <Link to={`/pedidos/${registro.id_pedido}`}>
                                         <button className="btn btn-custom mx-2">Ver mais</button>

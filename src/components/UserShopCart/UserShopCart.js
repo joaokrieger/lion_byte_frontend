@@ -45,11 +45,13 @@ export default function UserShopCart(){
     };
 
     const handleSubmit = async (event) => {
+       
+      if(registros.length > 0){
         const newOrder = {
             id_usuario: id_usuario,
             total: total_carrinho
         }
-    
+      
         axios.post('http://localhost:8080/pedidos', newOrder)
         .then(response => {
           navigate("/pedidos");
@@ -57,7 +59,8 @@ export default function UserShopCart(){
         .catch(error => {
           alert('Erro');
         });
-      };
+      }
+    };
 
     return(
         <div className="container my-4">

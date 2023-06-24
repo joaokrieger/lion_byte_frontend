@@ -1,6 +1,6 @@
 import React from "react";
 import imgLogo from '../../assets/img/logo_admin.png';
-import './AdminNavbar.css'
+import '../../assets/css/AdminNavbar.css'
 import {Link} from 'react-router-dom';
 
 export default function AdminNavbar(){
