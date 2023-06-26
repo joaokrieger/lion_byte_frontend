@@ -20,6 +20,7 @@ import AdminSupplierFormPage from "../pages/AdminSupplierFormPage";
 import UserProductDetailsPage from "../pages/UserProductDetailsPage";
 import UserShopCartPage from "../pages/UserShopCartPage";
 import UserOrderDetailsPage from "../pages/UserOrderDetailsPage";
+import AdminOrderDetailsPage from "../pages/AdminOrderDetails";
 
 import { AuthContext } from "../context/AuthContext";
 
@@ -52,8 +53,9 @@ const AppRoutes = () => {
               <Route path="/admin/fornecedores" element={<AdminSupplierListPage />} />
               <Route path="/admin/categorias" element={<AdminCategoryListPage />} />
               <Route path="/admin/usuarios" element={<AdminUserListPage />} />
+              
               <Route path="/admin/pedidos" element={<AdminOrderListPage />} />
-
+              <Route path="/admin/pedidos/:id_pedido" element={<AdminOrderDetailsPage />} />
               <Route path="/admin/cadastro/produtos" element={<AdminProductFormPage />} />
               <Route path="/admin/cadastro/produtos/:id_produto" element={<AdminProductFormPage />} />
               <Route path="/admin/cadastro/categorias/" element={<AdminCategoryFormPage />} />
