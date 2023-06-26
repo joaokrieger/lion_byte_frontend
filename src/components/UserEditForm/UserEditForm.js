@@ -18,6 +18,11 @@ export default function UserEditForm(){
       setMostrarSenha(!mostrarSenha);
     };    
     
+    const handleLogout = () => {
+      localStorage.setItem("id_usuario", "0");
+      localStorage.setItem("is_admin", "false");
+    };
+
     const handleSubmit = async (event) => {
       event.preventDefault();
         
@@ -38,7 +43,7 @@ export default function UserEditForm(){
         .catch(error => {
           alert('Erro: ',error);
         });
-      };
+    };
 
     useEffect(() => {
         if (id_usuario != null) {
@@ -90,7 +95,7 @@ export default function UserEditForm(){
                     <div className="d-flex justify-content-between">
                         <button type="submit" className="btn btn-custom px-5 mx-2">Salvar Alterações</button>
                         <Link to='/'>
-                            <button className="btn btn-danger px-5 mx-2">Sair</button>
+                            <button className="btn btn-danger px-5 mx-2"  onClick={handleLogout}>Sair</button>
                         </Link>
                     </div>
                 </form>

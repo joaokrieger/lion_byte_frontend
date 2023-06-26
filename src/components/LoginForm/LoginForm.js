@@ -11,7 +11,7 @@ export default function LoginForm(){
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleSubmit = async (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     
     const loginUser = {
@@ -22,17 +22,15 @@ export default function LoginForm(){
     axios.post('http://localhost:8080/usuarios/login', loginUser)
     .then(response => {
 
-      console.log(response.data.id_usuario);
       if(response.data.id_usuario > 0){
-
-        if(response.data.is_admin){
-          navigate("/admin");
-          localStorage.setItem('id_usuario', response.data.id_usuario);
-        }
-        else{
-          navigate("/home");
-          localStorage.setItem('id_usuario', response.data.id_usuario);
-        }
+       
+        localStorage.setItem('id_usuario', response.data.id_usuario);
+        localStorage.setItem('is_admin', response.data.is_admin);
+  
+        if (response.data.is_admin) 
+          (async () => {await navigate("/admin");})();
+        else 
+          (async () => {await navigate("/home");})();
       }
       alert(response.data.msg);
     })
@@ -50,7 +48,7 @@ export default function LoginForm(){
               <div className="d-flex justify-content-center mt-4">
                   <img src={imgLogo} alt="Logo" width="200"></img>
               </div>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleLogin}>
                 <div className="form-group">
                   <label className="text-white" for="email">Email:</label>
                   <input type="email" className="form-control" id="email" placeholder="Digite seu e-mail" value={email} onChange={(event) => setEmail(event.target.value)}></input>

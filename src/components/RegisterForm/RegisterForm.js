@@ -25,7 +25,7 @@ export default function RegisterForm(){
       }
       
       axios.post('http://localhost:8080/usuarios', newUser)
-      .then(response => {
+      .then(response => {    
         navigate("/");
       })
       .catch(error => {
